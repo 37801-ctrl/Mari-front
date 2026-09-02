@@ -157,8 +157,11 @@ export async function cadastrar(nome, email, senha) {
 //  🧪 Teste o erro: apague uma letra do token antes de mandar e veja o 401.
 //
 export async function listarUsuarios(token) {
-  // ↓↓↓ APAGUE ESTA LINHA E ESCREVA SEU CÓDIGO ↓↓↓
-  throw new Error("🚧 TAREFA 2 ainda não foi implementada (src/services/api.js)");
+const resposta = await fetch(`${API_URL}/api/usuarios`, {
+headers: { Authorization: `Bearer ${token}` },
+});
+console.log("resposta:", resposta);
+return [];
 }
 
 // ╔═════════════════════════════════════════════════════════════════════╗
@@ -192,9 +195,13 @@ export async function listarUsuarios(token) {
 //  🤔 Pergunta pra pensar: por que o card do mural mudou, se você só mexeu
 //     no formulário? (Resposta: o componente pai recarregou a lista.)
 //
-export async function editarPerfil(token, nome, email) {
-  // ↓↓↓ APAGUE ESTA LINHA E ESCREVA SEU CÓDIGO ↓↓↓
-  throw new Error("🚧 TAREFA 3 ainda não foi implementada (src/services/api.js)");
+export async function listarUsuarios(token) {
+const resposta = await fetch(`${API_URL}/api/usuarios`, {
+headers: { Authorization: `Bearer ${token}` },
+});
+const dados = await resposta.json();
+console.log("dados:", dados);
+return [];
 }
 
 // ╔═════════════════════════════════════════════════════════════════════╗
@@ -224,7 +231,11 @@ export async function editarPerfil(token, nome, email) {
 //     histórico e obedecer a lei. Quando você "exclui" sua conta numa rede
 //     social, quase sempre é isso que acontece.
 //
-export async function desativarConta(token) {
-  // ↓↓↓ APAGUE ESTA LINHA E ESCREVA SEU CÓDIGO ↓↓↓
-  throw new Error("🚧 TAREFA 4 ainda não foi implementada (src/services/api.js)");
+
+export async function listarUsuarios(token) {
+const resposta = await fetch(`${API_URL}/api/usuarios`, {
+headers: { Authorization: `Bearer ${token}` },
+});
+const dados = await resposta.json();
+return dados.usuarios;
 }
