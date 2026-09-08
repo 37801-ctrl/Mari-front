@@ -82,7 +82,7 @@ export async function editarPerfil(token, nome, email) {
   const dados = await resposta.json();
 
   if (!resposta.ok) {
-    throw new Error(dados.mensagem || "Não foi possível atualizar o perfil.");
+    throw new Error(dados.mensagem || "Não foi possível salvar.");
   }
 
   return dados;
@@ -105,3 +105,4 @@ export async function desativarConta(token) {
 
   return dados;
 }
+
