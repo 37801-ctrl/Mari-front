@@ -90,19 +90,14 @@ export async function editarPerfil(token, nome, email) {
 
 // 🚧 TAREFA 4 — EXCLUSÃO (DELETE)
 export async function desativarConta(token) {
-  const resposta = await fetch(`${API_URL}/api/usuarios/desativar`, {
-    method: "DELETE",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-
-  const dados = await resposta.json();
-
-  if (!resposta.ok) {
-    throw new Error(dados.mensagem || "Não foi possível desativar a conta.");
-  }
-
-  return dados;
+const resposta = await fetch(`${API_URL}/api/usuarios/desativar`, {
+method: "DELETE",
+headers: { Authorization: `Bearer ${token}` },
+});
+const dados = await resposta.json();
+if (!resposta.ok) {
+throw new Error(dados.mensagem || "Não foi possível desativar a conta.");
+}
+return dados;
 }
 
